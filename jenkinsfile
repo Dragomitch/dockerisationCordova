@@ -14,6 +14,7 @@ env.BUILD_NODE="master"
 
 timestampedNode(env.BUILD_NODE) {
     stage('Checkout') {
+	echo 'Before Checkout'
         gitCheckoutBranch("${env.BRANCH}")
         // requires last changes plugin
         lastChanges()
