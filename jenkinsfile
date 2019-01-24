@@ -3,6 +3,9 @@
 // ##########################################################################
 // # Mantainer rcbpeixoto@gmail.com.com
 // ###########################################################################
+pipeline{
+agent any
+
 env.BRANCH="${params.BRANCH}"
 
 env.GIT_CREDENTIALS_ID="my-git-credential-id"
@@ -95,4 +98,5 @@ def timestampedNode(String label = "master", Closure body) {
 
 def buildBaseImage(){
   sh "bash ./devops/build-dkr-img.sh"
+}
 }
