@@ -6,7 +6,7 @@
 env.BRANCH="${params.BRANCH}"
 
 env.GIT_CREDENTIALS_ID="my-git-credential-id"
-env.GIT_REPO_URL="ssg://myrepository.git"
+env.GIT_REPO_URL="ssh://myrepository.git"
 
 env.DOCKER_IMAGE_NAME="rcbop-cordova-android-builder"
 env.DOCKER_IMAGE_TAG="latest"
@@ -39,7 +39,7 @@ timestampedNode(env.BUILD_NODE) {
 
 def gitCheckoutBranch(branch){
   checkout([
-    $class: 'GitSCM', 
+    $class: 'GitSCM',
     branches: [[name: "*/${branch}"]],
     doGenerateSubmoduleConfigurations: false,
     extensions: [],
